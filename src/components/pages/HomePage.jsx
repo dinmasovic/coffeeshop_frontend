@@ -13,12 +13,6 @@ function HomePage(){
                 <li>Automatically generate optimal schedules using constraint-based logic</li>
 
             </ul>
-            <div className="flex gap-3 mt-2">
-                <a href="#"
-                   className="border p-2 px-3 rounded-lg text-white hover:bg-white hover:text-black hover:border-white">Register</a>
-                <a href="#"
-                   className="border p-2 px-3 rounded-lg text-white hover:bg-white hover:text-black hover:border-white">Contact</a>
-            </div>
         </div>
     </div>)
 }

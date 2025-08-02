@@ -1,15 +1,13 @@
 import './App.css'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Navigation from "./components/segments/Navigation.jsx";
 import HomePage from "./components/pages/HomePage.jsx";
 import OrderPage from "./components/pages/OrderPage.jsx";
 import MakeOrdersPage from "./components/pages/MakeOrdersPage.jsx";
+import LoginPage from "./components/pages/LoginPage.jsx";
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
+import RegisterPage from "./components/pages/RegisterPage.jsx";
+import EmployeesPage from "./components/pages/EmployeesPage.jsx"
 
 function App() {
     return (
@@ -17,8 +15,11 @@ function App() {
             <Navigation/>
             <Routes>
                 <Route path="/" element={<HomePage/>} />
-                <Route path="/orders" element={<OrderPage/>} />
-                <Route path="/makeorders" element={<MakeOrdersPage/>} />
+                <Route path="/orders" element={<ProtectedRoute><OrderPage/></ProtectedRoute>} />
+                <Route path="/makeorders" element={<ProtectedRoute><MakeOrdersPage/></ProtectedRoute>} />
+                <Route path="/login" element={<LoginPage/>} />
+                <Route path="/register" element={<RegisterPage/>}/>
+                <Route path="/employees" element={<ProtectedRoute><EmployeesPage/></ProtectedRoute>} />
             </Routes>
         </BrowserRouter>
     );

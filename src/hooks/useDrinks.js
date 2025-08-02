@@ -10,7 +10,6 @@ function useDrinks() {
         api.get("/drinks")
             .then((response) => {
                 setDrinks(response.data);
-                setLoading(false);
             })
             .catch((error) => {
                 console.log(error);
@@ -23,7 +22,6 @@ function useDrinks() {
     }, []);
 
     const addDrink = async (name, price, type) => {
-        console.log(type)
         try {
             await api.post("/drinks/addDrink", {type, name, price});
             fetchDrinks();
